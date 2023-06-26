@@ -1,17 +1,15 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import HomeView from "../views/HomeView.vue";
-
-const routes: Array<RouteRecordRaw> = [
-  {
-    path: "/",
-    name: "home",
-    component: HomeView,
-  },
-];
+import {createRouter, createWebHistory} from 'vue-router'
+import ListOfEmployers from '../views/ListOfEmployers.vue'
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes,
-});
+    history: createWebHistory(),
+    routes: [
+        {
+            path: '/',
+            name: 'home',
+            component: ListOfEmployers
+        },
+    ]
+})
 
-export default router;
+export default router

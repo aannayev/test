@@ -1,15 +1,18 @@
-import { createApp } from "vue";
-import { createVfm } from "vue-final-modal";
-import App from "./App.vue";
-import router from "./router";
+import './assets/main.css'
 
-import "./assets/scss/main.scss";
-import "vue-final-modal/style.css";
+import {createApp} from 'vue'
+import {createPinia} from 'pinia'
+import App from './App.vue'
+import router from './router'
 
-const app = createApp(App);
-const vfm = createVfm();
+const app = createApp(App)
 
-app.use(router);
-app.use(vfm);
+// @ts-ignore
+import BootstrapVue from 'bootstrap-vue-3'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue-3/dist/bootstrap-vue-3.css'
 
-app.mount("#app");
+app.use(createPinia())
+app.use(router)
+app.use(BootstrapVue)
+app.mount('#app')
